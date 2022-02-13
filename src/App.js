@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import EventList from "./components/EventList/EventList";
+import Modal from "./components/Modal/Modal";
+import NewEventForm from "./components/NewEventForm/NewEventForm";
+import Title from "./components/Title/Title";
 
 function App() {
+  const [events, setevents] = useState([]);
+
+  const [showModal, setShowModal] = useState(true);
+
+  const addEvent = (event) => {
+    setevents((prevEvents) => {
+      return [...prevEvents, event];
+    });
+    setShowModal(false);
+  };
+
+  const deleteEvent = (id) => {
+    setevents((events) => {
+      return events.filter((event) => {
+        return id !== event.id;
+      });
+    });
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title />
+      <EventList events={events} deleteEvent={deleteEvent} />
+      <Modal closeModal={closeModal}>
+        <NewEventForm addEvent={addEvent} />
+      </Modal>
     </div>
   );
 }

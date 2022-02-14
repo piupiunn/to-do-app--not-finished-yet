@@ -1,10 +1,12 @@
 import React from "react";
 import "./Title.css";
 
-export default function Title() {
+export default function Title({ setShowModal }) {
   return (
     <div>
-      <h2>Todo App</h2>
+      <h2 className="title">
+        Todo App <button onClick={() => setShowModal(true)}>Todo ekle</button>
+      </h2>
     </div>
   );
 }

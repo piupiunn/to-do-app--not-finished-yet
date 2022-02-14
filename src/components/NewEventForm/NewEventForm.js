@@ -8,7 +8,7 @@ export default function NewEventForm({ addEvent }) {
 
   const resetForm = () => {
     setEventTitle("");
-    setCategory("");
+    setCategory("Kişisel");
   };
 
   const handleSubmit = (e) => {
@@ -37,7 +37,10 @@ export default function NewEventForm({ addEvent }) {
 
         <label>
           <span>Kategori:</span>
-          <select onChange={(e) => setCategory(e.target.value)}>
+          <select
+            onChange={(e) => setCategory(e.target.value)}
+            className="category"
+          >
             <option value="Kişisel">Kişisel</option>
             <option value="Aile">Aile</option>
             <option value="İş">İş</option>

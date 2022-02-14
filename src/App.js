@@ -6,24 +6,42 @@ import NewEventForm from "./components/NewEventForm/NewEventForm";
 import Title from "./components/Title/Title";
 
 function App() {
-  const [events, setevents] = useState([]);
+  /** */
+  const [events, setEvents] = useState([]);
 
   const [showModal, setShowModal] = useState(true);
 
+  /**Event ekleme */
   const addEvent = (event) => {
-    setevents((prevEvents) => {
+    setEvents((prevEvents) => {
       return [...prevEvents, event];
     });
-    setShowModal(false);
   };
 
+  /**Event silme */
   const deleteEvent = (id) => {
-    setevents((events) => {
+    setEvents((events) => {
       return events.filter((event) => {
         return id !== event.id;
       });
     });
   };
+
+  /**Kategoriye göre görüntüleme */
+  const handleEvent = (category) => {
+    setEvents((events) => {
+      return events.filter((event) => {
+        return category === event.category;
+      });
+    });
+  };
+
+  const checkedBox = (e) => {
+    e.target.disabled = true;
+    e.target.parentElement.style.setProperty("text-decoration", "line-through");
+  };
+
+  const editEvent = () => {};
 
   const closeModal = () => {
     setShowModal(false);
@@ -31,11 +49,18 @@ function App() {
 
   return (
     <div className="App">
-      <Title />
-      <EventList events={events} deleteEvent={deleteEvent} />
-      <Modal closeModal={closeModal}>
-        <NewEventForm addEvent={addEvent} />
-      </Modal>
+      <Title setShowModal={setShowModal} />
+      <EventList
+        events={events}
+        deleteEvent={deleteEvent}
+        handleEvent={handleEvent}
+        checkedBox={checkedBox}
+      />
+      {showModal && (
+        <Modal closeModal={closeModal}>
+          <NewEventForm addEvent={addEvent} />
+        </Modal>
+      )}
     </div>
   );
 }

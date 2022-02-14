@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./NewEventForm.css";
 
-export default function NewEventForm({ addEvent }) {
+export default function NewEventForm({ addEvent, editEvent }) {
   const [eventTitle, setEventTitle] = useState("");
 
   const [category, setCategory] = useState("Kişisel");
 
   const resetForm = () => {
     setEventTitle("");
-    setCategory("Kişisel");
+    setCategory(category);
   };
 
   const handleSubmit = (e) => {
@@ -29,10 +29,12 @@ export default function NewEventForm({ addEvent }) {
         <label>
           <span>To-Do:</span>
           <input
+            className="new-form"
             type="text"
             value={eventTitle}
             onChange={(e) => setEventTitle(e.target.value)}
           ></input>
+          <span className="focus-form"></span>
         </label>
 
         <label>

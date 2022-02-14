@@ -1,19 +1,90 @@
 .event {
   margin: auto;
-  background-color: blueviolet;
+  background-color: rgb(235, 226, 243);
   text-align: center;
-  width: 30%;
+  width: 8%;
+
   border: 5px thin;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
+  padding-top: 0px;
 }
 
-.event button {
-  background-color: rgb(235, 51, 51);
-  border-radius: 20px;
+.category-button {
+  color: hsl(17, 89%, 53%);
+  background-color: #fafcfb;
+  border: 1px solid #f26b1d;
+  border-radius: 4px;
+  padding: 0px;
+  cursor: pointer;
+  height: 20px;
+  width: 50px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-button:hover {
+  transform: scale(1.1);
+  background-color: #524f4c;
 }
 
 .event-title-strike {
   text-decoration: line-through;
+}
+
+.delete-button {
+  color: #fbf9f9;
+  background-color: #eb8989;
+  border: 1px solid #0c0b0b;
+  border-radius: 4px;
+  padding: 0px;
+  cursor: pointer;
+  height: 20px;
+  width: 50px;
+  font-size: 11px;
+  margin: 5px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  outline: none;
+  background-position: center;
+  transition: background 0.8s;
+}
+.delete-button:hover {
+  background: #fb0000 radial-gradient(circle, transparent 1%, #f80303 1%)
+    center/15000%;
+  color: white;
+}
+
+.delete-button:active {
+  background-color: #292d3e;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.edit-button {
+  color: #fcfdfd;
+  background-color: #4d5de9;
+  border: 1px solid #141414;
+  border-radius: 4px;
+  padding: 0px;
+  cursor: pointer;
+  height: 20px;
+  width: 50px;
+  font-size: 11px;
+
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  outline: none;
+  background-position: center;
+  transition: background 0.8s;
+}
+.edit-button:hover {
+  background: #0b38ff radial-gradient(circle, transparent 1%, #47a7f5 1%)
+    center/15000%;
+  color: white;
+}
+
+.edit-button:active {
+  background-color: #292d3e;
+  background-size: 100%;
+  transition: background 0s;
 }

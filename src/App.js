@@ -41,8 +41,6 @@ function App() {
     e.target.parentElement.style.setProperty("text-decoration", "line-through");
   };
 
-  const editEvent = () => {};
-
   const closeModal = () => {
     setShowModal(false);
   };
@@ -56,6 +54,7 @@ function App() {
         handleEvent={handleEvent}
         checkedBox={checkedBox}
       />
+
       {showModal && (
         <Modal closeModal={closeModal}>
           <NewEventForm addEvent={addEvent} />

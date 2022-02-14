@@ -1,0 +1,8 @@
+input[type="text"] {
+  color: #9fc8e6;
+  width: 40%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  background-color: rgb(43, 51, 87);
+  border: none;
+}

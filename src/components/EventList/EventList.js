@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./EventList.css";
 
 export default function EventList({
@@ -22,14 +21,24 @@ export default function EventList({
               />
               {event.title}
             </h2>
-            <p>{event.category}</p>
-            <button onClick={() => handleEvent(event.category)}>
-              Kategori
+            <p></p>
+            <button
+              className="category-button"
+              onClick={() => handleEvent(event.category)}
+            >
+              {event.category}
             </button>
 
-            <button onClick={() => deleteEvent(event.id)}>Delete To-Do</button>
+            <button
+              className="delete-button"
+              onClick={() => deleteEvent(event.id)}
+            >
+              Delete
+            </button>
 
-            <button onClick={() => editEvent(event.id)}>Edit To-Do</button>
+            <button className="edit-button" onClick={() => editEvent(event)}>
+              Edit
+            </button>
           </div>
         </div>
       ))}

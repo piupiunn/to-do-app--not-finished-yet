@@ -31,10 +31,10 @@ export default function NewEventForm({ addEvent, editEvent }) {
           <input
             className="new-form"
             type="text"
+            maxLength={22}
             value={eventTitle}
             onChange={(e) => setEventTitle(e.target.value)}
           ></input>
-          <span className="focus-form"></span>
         </label>
 
         <label>
@@ -52,7 +52,7 @@ export default function NewEventForm({ addEvent, editEvent }) {
             <option value="İyilik">İyilik</option>
           </select>
         </label>
-        <button>To-Do'yu ekle</button>
+        <button>Ekle</button>
       </form>
     </div>
   );

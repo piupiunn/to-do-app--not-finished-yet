@@ -13,14 +13,3 @@
   background: rgb(245, 242, 242);
   border-radius: 10px;
 }
-
-.modal button {
-  background-color: rgb(63, 51, 235);
-
-  border-radius: 20px;
-  width: 50px;
-  height: 25px;
-  font-size: 10px;
-  padding: 0px;
-  box-shadow: 1px 1px 1px 1px black;
-}

@@ -6,7 +6,9 @@ export default function Modal({ children, closeModal }) {
     <div className="modal-backdrop">
       <div className="modal">
         {children}
-        <button onClick={closeModal}>Kapat</button>
+        <button className="modal-button" onClick={closeModal}>
+          Kapat
+        </button>
       </div>
     </div>
   );

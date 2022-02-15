@@ -1,7 +1,7 @@
 .title {
   text-align: center;
 }
-.title button {
+.new-todo-button {
   height: 40px;
   width: 40px;
   background: rgba(236, 9, 9, 0.2);
@@ -10,6 +10,7 @@
   border-top-color: #fff;
   border-bottom-color: #fff;
   animation: spinner3 800ms ease infinite;
+  margin-right: 100px;
 }
 @keyframes spinner3 {
   to {

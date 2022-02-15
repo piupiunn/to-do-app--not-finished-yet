@@ -8,11 +8,11 @@ export default function EventList({
   editEvent,
 }) {
   return (
-    <div>
+    <div className="event-card">
       {events.map((event) => (
         <div>
           <div className="event">
-            <h2>
+            <h2 className="event-title">
               <input
                 type="checkbox"
                 className="c-box"

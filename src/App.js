@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+
 import EventList from "./components/EventList/EventList";
 import Modal from "./components/Modal/Modal";
 import NewEventForm from "./components/NewEventForm/NewEventForm";

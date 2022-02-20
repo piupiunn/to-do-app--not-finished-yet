@@ -5,41 +5,36 @@ export default function EventList({
   handleEvent,
   deleteEvent,
   checkedBox,
-  editEvent,
 }) {
   return (
-    <div className="event-card">
+    <div className="event-card-box">
       {events.map((event) => (
-        <div>
-          <div className="event">
-            <h2 className="event-title">
-              <input
-                type="checkbox"
-                className="c-box"
-                disabled={false}
-                onChange={checkedBox}
-              />
-              {event.title}
-            </h2>
-            <p></p>
-            <button
-              className="category-button"
-              onClick={() => handleEvent(event.category)}
-            >
-              {event.category}
-            </button>
+        <div className="event-card">
+          <h2 className="event-title">
+            <input
+              type="checkbox"
+              className="c-box"
+              disabled={false}
+              onChange={checkedBox}
+            />
+            {event.title}
+          </h2>
+          <p className="event-detail">
+            <em>{event.detail}</em>
+          </p>
+          <button
+            className="category-button"
+            onClick={() => handleEvent(event.category)}
+          >
+            {event.category}
+          </button>
 
-            <button
-              className="delete-button"
-              onClick={() => deleteEvent(event.id)}
-            >
-              Delete
-            </button>
-
-            <button className="edit-button" onClick={() => editEvent(event)}>
-              Edit
-            </button>
-          </div>
+          <button
+            className="delete-button"
+            onClick={() => deleteEvent(event.id)}
+          >
+            x
+          </button>
         </div>
       ))}
     </div>

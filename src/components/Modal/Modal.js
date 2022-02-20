@@ -7,7 +7,7 @@ export default function Modal({ children, closeModal }) {
       <div className="modal">
         {children}
         <button className="modal-button" onClick={closeModal}>
-          Kapat
+          x
         </button>
       </div>
     </div>

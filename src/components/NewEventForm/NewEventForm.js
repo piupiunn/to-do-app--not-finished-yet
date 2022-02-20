@@ -6,9 +6,12 @@ export default function NewEventForm({ addEvent, editEvent }) {
 
   const [category, setCategory] = useState("Kişisel");
 
+  const [eventDetail, setEventDetail] = useState("");
+
   const resetForm = () => {
     setEventTitle("");
     setCategory(category);
+    setEventDetail("");
   };
 
   const handleSubmit = (e) => {
@@ -16,6 +19,7 @@ export default function NewEventForm({ addEvent, editEvent }) {
     const event = {
       title: eventTitle,
       category: category,
+      detail: eventDetail,
       id: Math.floor(Math.random() * 100000),
     };
 
@@ -38,6 +42,17 @@ export default function NewEventForm({ addEvent, editEvent }) {
         </label>
 
         <label>
+          <span>To-Do:</span>
+          <input
+            className="new-form"
+            type="text"
+            maxLength={22}
+            value={eventDetail}
+            onChange={(e) => setEventDetail(e.target.value)}
+          ></input>
+        </label>
+
+        <label>
           <span>Kategori:</span>
           <select
             onChange={(e) => setCategory(e.target.value)}
@@ -52,7 +67,7 @@ export default function NewEventForm({ addEvent, editEvent }) {
             <option value="İyilik">İyilik</option>
           </select>
         </label>
-        <button>Ekle</button>
+        <button className="ekle-button">Ekle</button>
       </form>
     </div>
   );
